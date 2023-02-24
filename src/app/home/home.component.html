@@ -1,0 +1,28 @@
+<mat-card style="width: 400px;">
+    <mat-card-header>
+        <mat-card-title style="text-align: center; width: fit-content;">
+            WELCOME
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div >
+        <button mat-raised-button color="primary" routerLink="/signup">
+            Signup
+          </button>
+          <button mat-raised-button color="primary" routerLink="/login">Login</button>
+          <button mat-raised-button color="primary" routerLink="/dashboard">
+            Dashboard
+          </button>
+      </div>
+      
+  
+      <div *ngIf="afAuth.user | async">
+        User is logged in
+        <br />
+        <button mat-raised-button color="primary" (click)="logout()">
+          Log out
+        </button>
+      </div>
+      <div *ngIf="!(afAuth.user | async)">User is not logged in</div>
+    </mat-card-content>
+  </mat-card>
