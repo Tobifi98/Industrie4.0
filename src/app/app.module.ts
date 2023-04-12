@@ -14,7 +14,12 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyLineChartComponent } from './my-line-chart/my-line-chart.component'
+import { ChartModule } from 'angular-highcharts';
+import { HeaderComponent } from './header/header.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     HomeComponent,
     DashboardComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    MyLineChartComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
