@@ -9,7 +9,7 @@ parameters = {
     "msm_id":"*"
 }
 
-
-r = requests.get(url, params=parameters, auth=('tester', 'training'))
-print(r)
-print(r.text)
+def getMeasurement():
+    r = requests.get(url, params=parameters, auth=('tester', 'training'))
+    data = r.json()
+    return data

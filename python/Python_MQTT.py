@@ -3,7 +3,7 @@ from paho.mqtt import client as mqtt_client
 
 broker = 'kruepv.gibip.de'
 port = 11883
-topic = [("pv/QPIGS/status/ac_input_voltage/value",1),("pv/QPIGS/status/ac_input_voltage/unit",2),("pv/QPIGS/status/ac_output_apparent_power/value",1), ("pv/QPIGS/status/ac_output_apparent_power/unit",2)] #"pv/QPIGS/status/ac_input_voltage"
+topic = [("pv/QPIGS/status/ac_input_voltage/#",1)]#,("pv/QPIGS/status/ac_input_voltage/unit",2),("pv/QPIGS/status/ac_output_apparent_power/value",1), ("pv/QPIGS/status/ac_output_apparent_power/unit",2)] #"pv/QPIGS/status/ac_input_voltage"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 

@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, make_response
+from flask.json import jsonify
 from flask_restful import Resource, Api, reqparse
 import pandas as pd
 import ast
+import REST_API
 app = Flask(__name__)
 api = Api(app)
 
@@ -9,9 +11,8 @@ class Users(Resource):
     # methods go here
     pass
     def get(self):
-        data = pd.read_csv('users.csv')  # read CSV
-        data = data.to_dict()  # convert dataframe to dictionary
-        return {'data': data}, 200  # return data and 200 OK code
+        test = REST_API.getMeasurement()
+        return jsonify({'data': test}, 200)  # return data and 200 OK code
     
     def post(self):
         parser = reqparse.RequestParser()  # initialize
