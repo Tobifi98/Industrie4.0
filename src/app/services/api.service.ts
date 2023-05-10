@@ -15,4 +15,16 @@ export class ApiService {
       'http://127.0.0.1:5000/restData',
     );
   }
+  getAlarm(): Observable<any> {   
+    
+    return this.http.get<any>(
+      'http://127.0.0.1:5000/getAlarms',
+    );
+  }
+  getMQTT(): Observable<any> {   
+    
+    return this.http.get<any>(
+      'http://127.0.0.1:5000/mqttData',
+    );
+  }
 }
