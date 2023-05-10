@@ -7,12 +7,12 @@ import REST_API
 app = Flask(__name__)
 api = Api(app)
 
-class Users(Resource):
+class restData(Resource):
     # methods go here
     pass
     def get(self):
-        test = REST_API.getMeasurement()
-        return jsonify({'data': test}, 200)  # return data and 200 OK code
+        data = REST_API.getMeasurement()
+        return jsonify({'data': data}, 200)  # return data and 200 OK code
     
     def post(self):
         parser = reqparse.RequestParser()  # initialize
@@ -97,7 +97,7 @@ class Users(Resource):
                 'message': f"'{args['userId']}' user not found."
             }, 404
 
-api.add_resource(Users, '/users')  # '/users' is our entry point
+api.add_resource(restData, '/restData')  # '/users' is our entry point
 
 if __name__ == '__main__':
     app.run()  # run our Flask app
