@@ -1,0 +1,120 @@
+Systems Measurements:(msm_id)
+avail_state ->
+performance ->
+yield -> good production in %
+scrap -> scrap
+good_prod -> good production
+oee -> displays oee in daterange
+cuttent_op -> current operation + statistic
+
+Examaples:
+    system_id=cps1
+    msm_id=good_prod;scrap;
+
+All measurements for ALL Systems
+http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface
+                     &name=getMeasurement
+                     &source=system
+                     &system_id=*
+                     &msm_id=*
+
+All measurements for system cps1
+http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface
+                     &name=getMeasurement
+                     &source=system
+                     &system_id=cps1
+
+RETVAL avail_state
+{
+        "systems": {
+            "cps1": {
+                "errors": [],
+                "avail_state": {
+                    "model_id": "avail_state",
+                    "instance_id": "cps1",
+                    "event_id": "SINIT",
+                    "color_code": "#cdcdcd",
+                    "signal_color": "white",
+                    "label": "SINIT: no stae yet"
+                }
+            }
+        }
+}
+
+RETVAL good_prod
+{
+    "systems": {
+        "cps1": {
+            "errors": [],
+            "good_prod": {
+                "model_id": "good_prod_pk",
+                "instance_id": "cps1",
+                "current": 0.0,
+                "config": {
+                    "type": "progress",
+                    "label": "Good Prod",
+                    "unit": "pk",
+                    "fradi": 0.0,
+                    "target": 99.0
+                },
+                "progress_pct": 0.0
+            }
+        }
+    }
+}
+                     
+
+POST Aufbau:
+URL:
+        url : http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface&name=postMeasurment
+BODY:   
+        {
+                "source": {"id":"acme123;134554;T1" }, 
+            "data": {
+                "source_ts": "2019-10-23T07:07:32.939Z",
+                "value": 83.32
+            }
+        }
+
+POST Alarms
+URL: 
+        url:  http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface&name=postAlarm
+BODY:
+    {
+            "source": {
+            "id":"cps1;PR{module}" },
+        "type":"module",
+        "severity":"error",
+        "code": "100",
+        "text": "No Material"            
+    }
+
+GET Aufbau:
+URL:
+        url : http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface&name=getMeasurment
+PARAMS: 
+    &msm_id=oee
+
+Source: system,operation,controller
+    &source=system
+
+Date:
+    &dt=2018-10-08T13:12:50.332+02:00
+
+Daterange(Interval half open):
+    &from_dt=2018-10-08T00:00:00.000+02:00
+    &to_dt=2018-10-09T00:00:00.000+02:00
+
+RETVAL:
+    {
+        "value": 83.32
+        "unit": "pct"
+    }
+
+GET Arlarm Aufbau:
+    URL:
+        url : http://10.3.0.71:8080/mhubx-cc/module/juwi/action?page=Logic.Interface&name=getAlarms&system_id={system}
+
+
+
+

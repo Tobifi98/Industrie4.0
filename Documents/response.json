@@ -1,0 +1,35 @@
+{
+  "systems": {
+    "cps1": {
+      "errors": [],
+      "good_prod": {
+        "model_id": "good_prod_pk",
+        "instance_id": "cps1",
+        "current": 0.0,
+        "config": {
+          "type": "progress",
+          "label": "Good Prod",
+          "unit": "pk",
+          "fradi": 0.0,
+          "target": 99.0
+        },
+        "progress_pct": 0.0
+      },
+      "scrap": {
+        "model_id": "scrap_pk",
+        "instance_id": "cps1",
+        "current": 0.0,
+        "config": {
+          "type": "progress",
+          "color": "red",
+          "label": "Scrap",
+          "unit": "pk",
+          "fradi": 0.0,
+          "target": 99.0
+        },
+        "progress_pct": 0.0
+      }
+    },
+    "cps2": { "errors": ["Unknown system cps2"] }
+  }
+}

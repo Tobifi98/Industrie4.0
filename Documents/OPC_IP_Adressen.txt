@@ -1,0 +1,10 @@
+IP-Adressen OPC
+
+192.168.1.200	Leitstand
+192.168.1.2		Palettenlager
+192.168.1.10	Rohlager
+192.168.1.40	Befüllung	
+192.168.1.20	Handling
+192.168.1.30	Presse
+
+eigene private IP: 192.168.1.X /24 255.255.255.0
