@@ -4,9 +4,10 @@ from paho.mqtt import client as mqtt_client
 
 broker = 'kruepv.gibip.de'
 port = 11883
-topic = [("pv/QPIGS/status/ac_input_voltage/#",1)]#,("pv/QPIGS/status/ac_input_voltage/unit",2),("pv/QPIGS/status/ac_output_apparent_power/value",1), ("pv/QPIGS/status/ac_output_apparent_power/unit",2)] #"pv/QPIGS/status/ac_input_voltage"
+topic = [("pv/QPIGS/status/ac_input_voltage/#",1),("pv/QPIGS/status/ac_output_apparent_power/#",1)]
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 100)}'
+data = {}
 
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
@@ -24,16 +25,21 @@ def connect_mqtt() -> mqtt_client:
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic `{msg.qos}` qos")
-        data = msg.payload.decode()
         node = msg.topic
-        return data, node
+        node = node.split('/', 4)
+        node = node[-2]
+        try:
+            data[node].append(msg.payload.decode())
+        except:
+            data[node] = [msg.payload.decode()]
+        
 
     client.subscribe(topic)
     client.on_message = on_message
 
 def run():
     client = connect_mqtt()
-    data = subscribe(client)
+    subscribe(client)
     client.loop_start()
     time.sleep(30)   
     client.disconnect()
