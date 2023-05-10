@@ -1,0 +1,16 @@
+{
+ 
+    "writeKey": "a7832446127674661103-ca7207a9878e24e7d2522bad1599a75e85aea24598fa7b2775f8c049c94c5327",
+    "readKey": "a7832446127674661103-6b1a25c07fa68f459058017e264a1c20b5d8078806a53473564b7c166ca5e85a",
+    
+    "upload": {  
+      "type": "xliff",
+      "features": ["use_project_lang"],
+      "files": "translations/en.xliff"         
+    },
+    
+    "download": {
+      "files": "translations/${lang}.xliff"
+    }
+    
+  }

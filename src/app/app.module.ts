@@ -19,6 +19,8 @@ import { MyLineChartComponent } from './my-line-chart/my-line-chart.component'
 import { ChartModule } from 'angular-highcharts';
 import { HeaderComponent } from './header/header.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
+import axios from 'axios';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     ReactiveFormsModule,
     ChartModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
