@@ -9,7 +9,7 @@ PR_URL = "opc.tcp://192.168.0.30:4840"
 BF_URL = "opc.tcp://192.168.0.40:4840"
 
 # create a client object and connect to the server
-client = Client(Controller_URL)
+client = Client(PL_URL)
 client.connect()
 
 # specify the Node ID or Browse Path of the station node
