@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { AlarmService } from '../services/alarm.service';
+import { Alarm } from '../shared/models/alarm.model';
 
 @Component({
   selector: 'app-my-line-chart',
@@ -13,19 +15,25 @@ export class MyLineChartComponent implements OnInit{
     [
     {
       sonsorName: 'Sensor1',
-      data: [1,2,3,4,5,6]
+      name: 'line 1',
+      data: [1,2,3,8,5,6]
     },
     {
       sonsorName: 'Sensor2',
-      data: [1,2,3,4,5,6]
+      name: 'line 2',
+      data: [1,2,12,4,5,6]
     },
     {
       sonsorName: 'Sensor3',
-      data: [1,2,3,4,5,6]
+      name: 'line 3',
+      data: [1,2,3,24,5,6]
     }
   ]}
-
+  constructor(private alarmService: AlarmService){}
   ngOnInit(): void {
+    this.alarmService.getAlarm().subscribe((alarm:Alarm) =>{
+      console.log(JSON.stringify(alarm));
+    })
     for(let data of this.json.sensors){
       let lineChart= new Chart({
         chart: {
@@ -39,7 +47,7 @@ export class MyLineChartComponent implements OnInit{
         },
         series: [
           {
-            name: 'Line 1',
+            name: data.name,
             type: 'areaspline',
             data: data.data
           }
