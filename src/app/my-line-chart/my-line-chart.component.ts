@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { AlarmService } from '../services/alarm.service';
 import { Alarm } from '../shared/models/alarm.model';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-my-line-chart',
@@ -29,10 +30,11 @@ export class MyLineChartComponent implements OnInit{
       data: [1,2,3,24,5,6]
     }
   ]}
-  constructor(private alarmService: AlarmService){}
+  constructor(private apiService: ApiService){}
   ngOnInit(): void {
-    this.alarmService.getAlarm().subscribe((alarm:Alarm) =>{
-      console.log(JSON.stringify(alarm));
+    this.apiService.getSensData().subscribe((data:any[]) =>{
+      let obj = Object.assign({}, data)
+      console.log(obj);
     })
     for(let data of this.json.sensors){
       let lineChart= new Chart({
