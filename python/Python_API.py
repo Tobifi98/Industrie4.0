@@ -1,11 +1,14 @@
 from flask import Flask, make_response
 from flask.json import jsonify
 from flask_restful import Resource, Api, reqparse
+from flask_cors import CORS
 import pandas as pd
 import ast
 import REST_API
+import Python_MQTT
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 class restData(Resource):
     # methods go here
@@ -97,7 +100,23 @@ class restData(Resource):
                 'message': f"'{args['userId']}' user not found."
             }, 404
 
-api.add_resource(restData, '/restData')  # '/users' is our entry point
+class Alarms(Resource):
+    # methods go here
+    pass
+    def get(self):
+        data = REST_API.getAlarms()
+        return jsonify({'data': data}, 200)  # return data and 200 OK code
+    
+class mqttData(Resource):
+    # methods go here
+    pass
+    def get(self):
+        data = Python_MQTT.run()
+        return jsonify({'data': data}, 200)  # return data and 200 OK code
+
+api.add_resource(restData, '/restData')  # '/restData' is our entry point
+api.add_resource(Alarms, '/getAlarms')  # '/getAlarms' is our entry point
+api.add_resource(mqttData, '/mqttData')  # '/mqttData' is our entry point
 
 if __name__ == '__main__':
     app.run()  # run our Flask app
