@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import axios from 'axios';
+import { FarbsensorComponent } from './farbsensor/farbsensor.component';
 import {MatMenuModule} from '@angular/material/menu'; 
 
 
@@ -32,7 +33,8 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginComponent,
     SignupComponent,
     MyLineChartComponent,
-    HeaderComponent
+    HeaderComponent,
+    FarbsensorComponent
   ],
   imports: [
     BrowserModule,
