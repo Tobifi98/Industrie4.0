@@ -7,9 +7,6 @@ export interface Alarm {
                 {
                     code: string,
                     msg: string
-                },
-                {
-
                 }
             ]
         }
