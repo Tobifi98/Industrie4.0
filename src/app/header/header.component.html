@@ -1,13 +1,27 @@
 <div>
-    <div style="background-color: #04254e;
-    position: fixed;
-    top: 0px;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    height: 60px;
-    z-index: 998;
-    display: flex;
-    justify-content: center;"
-    >test
+  <div
+    style="
+      background-color: #5f209a;
+      position: fixed;
+      top: 0px;
+      width: -moz-available;
+      width: -webkit-fill-available;
+      height: 60px;
+      z-index: 998;"
+  >
+    <div style="overflow: auto; margin-top: 13px;">
+        <div style="float: left; margin-left: 13px;">
+            <h2 style="color: white;">Industrie 4.0 Dashboard</h2>
+        </div>
+        
+        <div style="float: right; margin-right: 13px">
+            <button mat-button [matMenuTriggerFor]="menu" style="color: white">Menu</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/login">Einloggen</button>
+              <button mat-menu-item routerLink="/signup">Registrieren</button>
+            </mat-menu>
+        </div>
+
     </div>
+  </div>
 </div>

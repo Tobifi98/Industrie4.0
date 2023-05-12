@@ -22,6 +22,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import axios from 'axios';
 import { FarbsensorComponent } from './farbsensor/farbsensor.component';
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { FarbsensorComponent } from './farbsensor/farbsensor.component';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
     ChartModule,
