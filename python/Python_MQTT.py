@@ -41,7 +41,7 @@ def run():
     client = connect_mqtt()
     subscribe(client)
     client.loop_start()
-    time.sleep(30)   
+    time.sleep(60)   
     client.disconnect()
     client.loop_stop()
     return data
