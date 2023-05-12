@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import axios from 'axios';
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import axios from 'axios';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
     ChartModule,
