@@ -1,0 +1,17 @@
+.element-container {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.colored-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff0000;
+  margin: 10px auto;
+}
+
+.above-label,
+.below-label {
+  display: block;
+  text-align: center;
+}

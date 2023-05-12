@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import axios from 'axios';
+import { FarbsensorComponent } from './farbsensor/farbsensor.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import axios from 'axios';
     LoginComponent,
     SignupComponent,
     MyLineChartComponent,
-    HeaderComponent
+    HeaderComponent,
+    FarbsensorComponent
   ],
   imports: [
     BrowserModule,
