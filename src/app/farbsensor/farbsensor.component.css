@@ -1,13 +1,23 @@
 .element-container {
   border: 1px solid black;
   padding: 10px;
+  width: 350px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
 .colored-box {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
   background-color: #ff0000;
-  margin: 10px auto;
+  border: 5px solid black;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 24px;
 }
 
 .above-label,
