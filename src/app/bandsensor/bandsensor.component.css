@@ -18,9 +18,9 @@
 }
 
 .box {
-  width: 150px;
+  width: 130px;
   height: 150px;
-  border: 5px solid black;
+  border: 4px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,12 +31,13 @@
 .box-label-container {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 200px;
   margin-top: 8px;
 }
 
 .box-label {
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 8px;
 }
 

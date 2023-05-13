@@ -1,7 +1,7 @@
 .element-container {
-  border: 2px solid black;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 
 .colored-box {
@@ -15,10 +15,14 @@
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 24px;
+  display: block;
+  text-align: center;
 }
-
-.above-label,
 .below-label {
   display: block;
   text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+
+  margin-top: 8px;
 }
