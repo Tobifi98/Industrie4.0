@@ -24,7 +24,8 @@ import axios from 'axios';
 import { FarbsensorComponent } from './farbsensor/farbsensor.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { BandsensorComponent } from './bandsensor/bandsensor.component';
-import { AlarmChoiceComponent } from './alarm-choice/alarm-choice.component'; 
+import { AlarmChoiceComponent } from './alarm-choice/alarm-choice.component';
+import { CurrentAlarmsComponent } from './current-alarms/current-alarms.component'; 
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AlarmChoiceComponent } from './alarm-choice/alarm-choice.component';
     HeaderComponent,
     FarbsensorComponent,
     BandsensorComponent,
-    AlarmChoiceComponent
+    AlarmChoiceComponent,
+    CurrentAlarmsComponent
   ],
   imports: [
     BrowserModule,

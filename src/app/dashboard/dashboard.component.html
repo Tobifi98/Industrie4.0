@@ -6,11 +6,20 @@ Dashboard!
 <button mat-raised-button color="primary" routerLink="/home">
     Home
 </button>
-<mat-grid-list cols="3" rowHeight="3:2">
-  <mat-grid-tile><app-my-line-chart></app-my-line-chart></mat-grid-tile>
-  <mat-grid-tile><app-farbsensor></app-farbsensor></mat-grid-tile>
-  <mat-grid-tile><app-bandsensor></app-bandsensor></mat-grid-tile>
-  <mat-grid-tile><app-alarm-choice></app-alarm-choice></mat-grid-tile>
-  <mat-grid-tile>5</mat-grid-tile>
-  <mat-grid-tile>6</mat-grid-tile>
+<mat-grid-list cols="3" rowHeight="4:3" style="grid-gap: 0;">
+  <mat-grid-tile>
+    <app-my-line-chart></app-my-line-chart>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-farbsensor></app-farbsensor>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-bandsensor></app-bandsensor>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="2">
+    <app-alarm-choice></app-alarm-choice>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="2">
+        <app-current-alarms></app-current-alarms>
+  </mat-grid-tile>
 </mat-grid-list>

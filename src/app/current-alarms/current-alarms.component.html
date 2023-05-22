@@ -1,0 +1,22 @@
+<mat-card class="custom-card">
+  <h2 class="header">Aktuelle Alarme</h2>
+  <mat-card-content>
+    <div class="row">
+      <div class="column">
+        <div *ngFor="let alarm of alarms.slice(0, alarms.length / 2)">
+          <!-- Display alarms in the first column -->
+          <!-- Example: Displaying alarm name -->
+          <p>{{ alarm.name }}</p>
+        </div>
+      </div>
+      <div class="column">
+        <div *ngFor="let alarm of alarms.slice(alarms.length / 2)">
+          <!-- Display alarms in the second column -->
+          <!-- Example: Displaying alarm name -->
+          <p>{{ alarm.name }}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

@@ -47,18 +47,18 @@ export class MyLineChartComponent implements OnInit {
       },
     ],
   };
-  constructor(private apiService: ApiService) {}
+  // constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    this.apiService.getSensData().subscribe((data: SensorData[]) => {
-      let obj = Object.assign({}, data);
-      console.log(obj);
-    });
-    this.apiService.getAlarm().subscribe((data: Alarm) => {
-      console.log(data);
-    });
-    this.apiService.getMQTT().subscribe((data: any) => {
-      console.log(data);
-    });
+    // this.apiService.getSensData().subscribe((data: SensorData[]) => {
+    //   let obj = Object.assign({}, data);
+    //   console.log(obj);
+    // });
+    // this.apiService.getAlarm().subscribe((data: Alarm) => {
+    //   console.log(data);
+    // });
+    // this.apiService.getMQTT().subscribe((data: any) => {
+    //   console.log(data);
+    // });
 
     for (let data of this.json.sensors) {
       let lineChart = new Chart({
