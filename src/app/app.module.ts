@@ -23,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import axios from 'axios';
 import { FarbsensorComponent } from './farbsensor/farbsensor.component';
 import {MatMenuModule} from '@angular/material/menu';
-import { BandsensorComponent } from './bandsensor/bandsensor.component'; 
+import { BandsensorComponent } from './bandsensor/bandsensor.component';
+import { AlarmChoiceComponent } from './alarm-choice/alarm-choice.component'; 
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BandsensorComponent } from './bandsensor/bandsensor.component';
     MyLineChartComponent,
     HeaderComponent,
     FarbsensorComponent,
-    BandsensorComponent
+    BandsensorComponent,
+    AlarmChoiceComponent
   ],
   imports: [
     BrowserModule,

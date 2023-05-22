@@ -5,24 +5,34 @@
 }
 
 .colored-box {
-  width: 200px;
-  height: 150px;
+  width: 350px;
+  height: 170px;
   background-color: #ff0000;
   border: 5px solid black;
+
 }
 
 .header {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 24px;
   display: block;
   text-align: center;
+  padding-bottom: 20pxpx;
+  margin-top: 8px;
 }
+
 .below-label {
   display: block;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-
   margin-top: 8px;
+}
+
+.custom-card {
+  width: 530px;
+  height: 350px;
+  border: 2px solid #000000;
+  align-items: center;
 }
