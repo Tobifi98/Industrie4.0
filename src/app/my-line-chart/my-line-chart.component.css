@@ -1,6 +1,24 @@
-/* .custom-card {
+.custom-card {
   width: 530px;
-  height: 350px;
+  height: 400px;
   border: 2px solid #000000;
   align-items: center;
-} */
+}
+
+.chart-container {
+  width: 500px;
+  height: 300px;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+.header {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 25px;
+  margin-top: 8px;
+}
