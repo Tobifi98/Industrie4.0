@@ -55,7 +55,7 @@ export class MyLineChartComponent implements OnInit {
     for (let data of this.json.sensors) {
       let lineChart = new Chart({
         chart: {
-          height: 350,
+          height: 300,
           events: {
             load: function () {
               var series = this.series[0];

@@ -25,7 +25,8 @@ import { FarbsensorComponent } from './farbsensor/farbsensor.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { BandsensorComponent } from './bandsensor/bandsensor.component';
 import { AlarmChoiceComponent } from './alarm-choice/alarm-choice.component';
-import { CurrentAlarmsComponent } from './current-alarms/current-alarms.component'; 
+import { CurrentAlarmsComponent } from './current-alarms/current-alarms.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { CurrentAlarmsComponent } from './current-alarms/current-alarms.componen
     ReactiveFormsModule,
     ChartModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

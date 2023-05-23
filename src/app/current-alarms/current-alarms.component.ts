@@ -1,23 +1,64 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-const API_URL = 'https://example.com/api/alarms';
+import { Component } from '@angular/core';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-current-alarms',
   templateUrl: './current-alarms.component.html',
   styleUrls: ['./current-alarms.component.css']
 })
-export class CurrentAlarmsComponent implements OnInit {
-  alarms: any[] = [];
 
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {
-    this.http.get<any[]>(API_URL).subscribe(data => {
-      this.alarms = data;
-    });
-  }
+export class CurrentAlarmsComponent  {
+  alarmList: any[] = [
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    },
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    },
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    },
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    },
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    },
+    {
+      module_id: 'PR',
+      errors: [
+        { code: '130', msg: 'Test 1' },
+        { code: '131', msg: 'Test 2' },
+        // Add more error objects as needed
+      ]
+    }
+    // Add more alarm objects as needed
+  ];
 }
 
 
