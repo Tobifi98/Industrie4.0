@@ -1,12 +1,6 @@
 <div style="margin-top: 80px;">
-Dashboard!
 
-<br>
-
-<button mat-raised-button color="primary" routerLink="/home">
-    Home
-</button>
-<mat-grid-list cols="3" rowHeight="4:3" style="grid-gap: 0;">
+<mat-grid-list cols="3" rowHeight="4:3">
   <mat-grid-tile>
     <app-my-line-chart></app-my-line-chart>
   </mat-grid-tile>
@@ -17,9 +11,13 @@ Dashboard!
     <app-bandsensor></app-bandsensor>
   </mat-grid-tile>
   <mat-grid-tile rowspan="2">
-    <app-alarm-choice></app-alarm-choice>
+    <!-- <div class="custom-grid-tile-content"> -->
+      <app-alarm-choice></app-alarm-choice>
+    <!-- </div> -->
   </mat-grid-tile>
   <mat-grid-tile colspan="2" rowspan="2">
-        <app-current-alarms></app-current-alarms>
+    <!-- <div class="custom-grid-tile-content"> -->
+      <app-current-alarms></app-current-alarms>
+    <!-- </div> -->
   </mat-grid-tile>
 </mat-grid-list>
