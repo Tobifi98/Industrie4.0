@@ -3,7 +3,7 @@ import time
 from paho.mqtt import client as mqtt_client
 import json
 
-broker = 'test.mosquitto.org'   #'kruepv.gibip.de'
+broker = 'test.mosquitto.org' #'kruepv.gibip.de'
 port = 1883 #11883
 topic = [("Industrie4/Palettenlager/#",1),("Industrie4/Farbsensor/#",1)]
 # generate client ID with pub prefix randomly

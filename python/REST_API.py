@@ -16,7 +16,7 @@ AlarmParameters = {
     "system_id":"cps1",
     "msm_id":"*"
 }
-
+  
 def getMeasurement():
     r = requests.get(url, params=RESTparameters, auth=('tester', 'training'))
     data = r.json()
