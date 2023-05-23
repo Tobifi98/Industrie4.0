@@ -1,5 +1,7 @@
+<ng-container *ngIf="_reload">
 <mat-card class="custom-card">
   <h2 class="header">Aktuelle Alarme</h2>
+  <button (click)="reload()">Aktualisieren</button>
   <div class="leftOriented">
     <mat-card-content>
       <div class="alarm-list">
@@ -28,3 +30,4 @@
     </mat-card-content>
   </div>
 </mat-card>
+</ng-container>

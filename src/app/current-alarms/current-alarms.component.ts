@@ -11,6 +11,14 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 })
 
 export class CurrentAlarmsComponent  {
+
+  public _reload = true;
+
+ reload() {
+    setTimeout(() => this._reload = false);
+    setTimeout(() => this._reload = true);
+}
+
   alarmList: any[] = [
     {
       module_id: 'PR',
