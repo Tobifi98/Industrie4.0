@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrentAlarmsComponent } from '../current-alarms/current-alarms.component';
 
 @Component({
   selector: 'app-alarm-choice',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./alarm-choice.component.css']
 })
 export class AlarmChoiceComponent {
+
+constructor(private alarm: CurrentAlarmsComponent){}
+
+  Paletalarm(){
+    this.alarm.setError("Palete");
+  }
 
 }

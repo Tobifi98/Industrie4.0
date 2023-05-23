@@ -1,38 +1,30 @@
 <mat-card class="custom-card">
   <h2 class="header">Aktuelle Alarme</h2>
   <div class="leftOriented">
-  <mat-card-content>
-    <div class="alarm-list">
-      <div class="column">
-        <cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport">
-        <div *cdkVirtualFor="let alarm of alarmList.slice(0, alarmList.length / 2)">
-          <!-- Display alarms in the first column -->
-          <!-- Replace with your desired alarm data -->
-          <p>{{ alarm.module_id }}</p>
-          <ul>
-            <li *ngFor="let error of alarm.errors">
-              <span>{{ error.code }}</span> - <span>{{ error.msg }}</span>
-            </li>
-          </ul>
-        </div>
-      </cdk-virtual-scroll-viewport>
-      </div>
-      <div class="column">
-        <div *cdkVirtualFor="let alarm of alarmList.slice(alarmList.length / 2)">
-          <!-- Display alarms in the second column -->
-          <!-- Replace with your desired alarm data -->
-          <p>{{ alarm.module_id }}</p>
-          <ul>
-            <li *ngFor="let error of alarm.errors">
-              <span>{{ error.code }}</span> - <span>{{ error.msg }}</span>
-            </li>
-          </ul>
+    <mat-card-content>
+      <div class="alarm-list">
+        <div class="column">
+          <cdk-virtual-scroll-viewport
+            [itemSize]="2 * 7"
+            class="example-viewport"
+          >
+            <div
+              *cdkVirtualFor="
+                let alarm of alarmList
+              "
+            >
+              <!-- Display alarms in the first column -->
+              <!-- Replace with your desired alarm data -->
+              <p>Modul: {{ alarm.module_id }}</p>
+              <ul>
+                <li *ngFor="let error of alarm.errors">
+                  <span>Fehlercode: {{ error.code }}</span> - <span>Fehlernachricht: {{ error.msg }}</span>
+                </li>
+              </ul>
+            </div>
+          </cdk-virtual-scroll-viewport>
         </div>
       </div>
-    </div>
-
-  </mat-card-content>
-</div>
+    </mat-card-content>
+  </div>
 </mat-card>
-
-
