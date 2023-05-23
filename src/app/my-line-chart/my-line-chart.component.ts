@@ -36,15 +36,7 @@ export class MyLineChartComponent implements OnInit {
       {
         sonsorName: 'Sensor1',
         name: 'line 1',
-      },
-      {
-        sonsorName: 'Sensor2',
-        name: 'line 2',
-      },
-      {
-        sonsorName: 'Sensor3',
-        name: 'line 3',
-      },
+      }
     ],
   };
   // constructor(private apiService: ApiService) {}
@@ -63,6 +55,7 @@ export class MyLineChartComponent implements OnInit {
     for (let data of this.json.sensors) {
       let lineChart = new Chart({
         chart: {
+          height: 350,
           events: {
             load: function () {
               var series = this.series[0];
@@ -74,6 +67,7 @@ export class MyLineChartComponent implements OnInit {
             },
           },
         },
+
         title: {
           text: data.sonsorName,
         },
