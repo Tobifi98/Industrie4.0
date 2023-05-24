@@ -4,12 +4,14 @@
     <div class="container">
       <div class="container">
         <div class="header">Bandsensor L + R</div>
+        <Button style ="display: none;" id="bandL" (click)="randBR()"></Button>
+        <Button style ="display: none;" id="bandR" (click)="randBL()"></Button>
         <div class="box-container">
           <div class="box">
-            <div class="box" [ngClass]="{ 'green': isActive, 'red': !isActive }"></div>
+            <div class="box" [style.background-color]="boxColorL"></div>
           </div>
           <div class="box">
-            <div class="box" [ngClass]="{ 'green': !isActive, 'red': isActive }"></div>
+            <div class="box" [style.background-color]="boxColorR"></div>
           </div>
         </div>
         <div class="box-label-container">

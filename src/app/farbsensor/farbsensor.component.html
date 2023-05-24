@@ -2,6 +2,7 @@
       <mat-card-header></mat-card-header>
       <mat-card-content>
         <div class="header">Farbsensor</div>
+        <Button style ="display: none;" id="rand" (click)="randCol()"></Button>
         <div class="colored-box" [style.background-color]="boxColor"></div>
         <div class="below-label">Erkannte Farbe</div>
       </mat-card-content>

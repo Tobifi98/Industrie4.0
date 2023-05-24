@@ -8,7 +8,7 @@ import REST_API
 import Python_MQTT
 app = Flask(__name__)
 api = Api(app)
-CORS(app)
+# CORS(app)
 
 class restData(Resource):
     # methods go here
